@@ -1,0 +1,210 @@
+# PokeAPI
+# Script de bash para consumir y mostrar datos de pokemones desde la API: https://pokeapi.co 
+
+#----------------variables
+DATA_DIR_PATH=$PWD/data
+
+#----------------colors
+LIGHT_YELLOW="\e[93m"
+RED="\e[41m"
+ENDCOLOR="\e[0m"
+
+#----------------funciones
+validateDataDirectory(){
+    if ! [ -d $DATA_DIR_PATH ]
+    then
+        mkdir $DATA_DIR_PATH
+    fi
+}
+
+searchPokemonID() {
+
+    validateDataDirectory
+
+    printf "\n"
+    read -p " Escribe el ID del Pokemon que quieres buscar ---> " pokemonID
+  
+    case $pokemonID in
+    *[!0-9]*)
+        printf "\n ${RED} ***ERROR: El valor debe ser numérico y positivo. ***${ENDCOLOR} "
+        printf "\n ${LIGHT_YELLOW} ********** Gracias por usar la guía Pokemon ********** ${ENDCOLOR} \n"
+        exit 1
+    ;;
+    0)
+        clear
+        printf "\n ${RED}***ERROR: No existe el Pokémon con el ID 0. *** ${ENDCOLOR}"
+    ;;
+    *[1-9]*)
+        POKEMON_DIR_PATH=$DATA_DIR_PATH/$pokemonID
+        INFO_TXT_PATH=$POKEMON_DIR_PATH/info.txt
+        RESPONSE_JSON_PATH=$POKEMON_DIR_PATH/response.json
+        URL="https://pokeapi.co/api/v2/pokemon/$pokemonID"
+        POKE_API_JSON=$(curl $URL 2> /dev/null | jq '.' ) 
+        
+        DATE=$(date '+%d%m%Y%H%M%S')
+        CREATED_AT=("created_at:    "$DATE)
+        CONSULTED_AT=("consulted_at: "$DATE)
+        INITIAL_VISITORS=("visitors: 1")
+        
+        if [ -d $POKEMON_DIR_PATH ]
+        then
+            updateVisitorsCount
+            updateConsultedDate
+            printPokemonInfo
+            continueOption
+        else  
+            if ! curl -s --head GET ${URL} | grep "404" > /dev/null
+            then
+                mkdir $POKEMON_DIR_PATH
+                touch $RESPONSE_JSON_PATH
+                echo $POKE_API_JSON > $RESPONSE_JSON_PATH
+    
+                touch $INFO_TXT_PATH
+                pushDataToInfoTxt
+                printPokemonInfo
+                continueOption
+            else
+                clear
+                printf "\n ${RED}***ERROR:El Pokémon que buscas no existe, intenta con otro!***${ENDCOLOR} "
+            fi
+        fi
+    ;;
+    *)
+      clear
+    ;;
+    esac
+}
+
+updateVisitorsCount(){
+    PREVIOUS_VISITOR_NUMBER=$(awk -F' ' '{print $2}' $INFO_TXT_PATH | tail -1)
+    VISITOR_NUMBER_INCREMENT=$((PREVIOUS_VISITOR_NUMBER+1))
+    VISITORS_UPDATED=("visitors: "$VISITOR_NUMBER_INCREMENT) 
+    sed -i "/visitors/c $VISITORS_UPDATED" $INFO_TXT_PATH
+}
+
+updateConsultedDate(){
+    sed -i "/consulted_at/c $CONSULTED_AT" $INFO_TXT_PATH
+}
+
+pushDataToInfoTxt(){
+    
+    INFO_JSON=$(jq -r '"id: \(.id),name: \(.name),weight: \(.weight),height: \(.height),type: \(.types[0].type.name)"' $RESPONSE_JSON_PATH)
+
+    OIFS=$IFS  #store old IFS in buffer INPUT FIELD SEPARATORS
+    IFS=','    #set_IFS to ','
+
+    for key in $INFO_JSON 
+    do 
+        echo $key >> $INFO_TXT_PATH
+    done
+    
+    IFS=$OIFS #reset IFS to default (whitespace)
+
+    echo $CREATED_AT >> $INFO_TXT_PATH
+    echo $CONSULTED_AT >> $INFO_TXT_PATH
+    echo $INITIAL_VISITORS >> $INFO_TXT_PATH
+}
+
+printPokemonInfo(){
+    printf "\n ************** Información del Pokémon *************** \n"
+    cat $INFO_TXT_PATH | head -5    
+    printf "\n ****************************************************** \n" 
+}
+
+continueOption(){
+    read -p " Deseas consultar un nuevo Pokémon? [Y/n] ---> " user_response
+        case $user_response in
+            y|Y)
+                clear
+            ;;
+            n|N)
+                printf "\n********** Gracias por usar la guía Pokemon **********\n"
+                exit 0
+            ;; 
+            *)
+                clear
+            ;;  
+        esac
+}
+
+pokemonMasConsultados(){
+    printf "\n**************** Los más consultados *****************\n"
+    grep -r 'name\|visitors' $DATA_DIR_PATH/**/*.txt | awk '{print $2}'| awk 'NR % 2 == 1 { pokemonName = $0 ; next } { print pokemonName ": " $0 }' | sort -rk 2
+    printf "\n******************************************************\n" 
+    continueOption
+}
+#----------------Termina funciones
+
+#---------------- Inicia SCRIPT
+
+jq --version 
+if [ $? -eq 0 ];
+then
+    clear
+    validateDataDirectory
+
+    while true; 
+      do
+        printf "\n ${LIGHT_YELLOW}************ Bienvenido a la guía Pokemon ************ ${ENDCOLOR}"
+        printf "\n ${LIGHT_YELLOW}    _____   ____  _  ________ __  __  ____  _   _  ${ENDCOLOR} "
+        printf "\n ${LIGHT_YELLOW}   |  __ \ / __ \| |/ /  ____|  \/  |/ __ \| \ | | ${ENDCOLOR} "
+        printf "\n ${LIGHT_YELLOW}   | |__) | |  | | ' /| |__  | \  / | |  | |  \| | ${ENDCOLOR} "
+        printf "\n ${LIGHT_YELLOW}   |  ___/| |  | |  < |  __| | |\/| | |  | | .   | ${ENDCOLOR} "
+        printf "\n ${LIGHT_YELLOW}   | |    | |__| | . \| |____| |  | | |__| | |\  | ${ENDCOLOR} "
+        printf "\n ${LIGHT_YELLOW}   |_|     \____/|_|\_\______|_|  |_|\____/|_| \_| ${ENDCOLOR} "
+    
+        printf "\n Selecciona la opción deseada:"
+        printf "\n     F) Consultar la información de un pokemón por su id"
+        printf "\n     D) Borrar datos almacenados en cache"
+        printf "\n     S) Mostrar estadísticas"
+        printf "\n     X) Salir\n"
+        read -p "Tú elección ---> " election
+
+        #-----------------------------Opcion F---------------------------
+        case $election in
+          F|f) 
+            searchPokemonID
+        ;;
+
+        #-----------------------------Opcion D---------------------------
+        D|d)    
+            if [ -d $DATA_DIR_PATH ];
+            then
+                rm -r $DATA_DIR_PATH
+                printf "\n************* Datos en cache eliminados **************"
+                printf "\n********** Gracias por usar la guía Pokemon **********\n"
+                break
+            else
+                echo "No existe la carpeta (data)"
+                break
+            fi
+        ;;
+
+        #-----------------------------Opcion S---------------------------
+        S|s) 
+            if [ "$(ls $DATA_DIR_PATH)" ];
+            then        
+                pokemonMasConsultados
+            else
+                clear
+                printf "\n ${RED}***ERROR: No hay registros, intenta primero consultando un Pokémon!  *** ${ENDCOLOR}"
+            fi
+        ;;
+
+        #-----------------------------Opcion X---------------------------
+        X|x|q|Q) 
+            printf "\n********** Gracias por usar la guía Pokemon **********\n"
+            exit 0
+        ;;
+        #-----------------------------Opcion Default---------------------------
+        *)
+            clear
+            printf "\n ${RED} ***ERROR: Ingresa una opción válida ***${ENDCOLOR} "
+        ;;
+        esac
+      done
+else
+    printf "\n ${RED} Porfavor instala jq y vuelve a ejecutar el script ${ENDCOLOR} "
+    echo "Protip: utiliza el comando --> 'sudo apt-get install jq' para linux / 'brew install jq'  para instalarlo con Brew en mac."
+    exit 2
+fi
