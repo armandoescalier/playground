@@ -8,11 +8,11 @@ como consumir una API con JS.
 - Vanilla CSS
 
 ## Uso
-Descarga la carpeta `crowfunding` del ejemplo que prefieras.
+Descarga la carpeta `crowdfunding` del ejemplo que prefieras.
 
 El sitio web debería mostrarse al abrir el archivo `index.html` en un navegador web.
 
-## IMPORTANTE
+#### IMPORTANTE
 - Es necesario tener conexión a internet para que el tipo de font funcione correctamente.
 - El proyecto utiliza `SASS` para CSS, es posible que sea necesario instalarlo para el correcto funcionamiento del sitio web.
 
