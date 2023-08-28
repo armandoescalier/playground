@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+
+    <!-- TITLE -->
+    <title>crowdfund</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" />
+</head>
+
+<body>
+    <main id="main">
+        <header class="header">
+            <!-- inicia menu superior -->
+            <nav class="navbar">
+                <a href="#"><img src="assets/images/logo.svg"></a>
+                <ul class="nav-menu">
+                    <div class="nav-item-decoration above">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About</a>
+                        </li>
+                    </div>
+                    <div class="nav-item-decoration above">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Discover</a>
+                        </li>
+                    </div>
+                    <div class="nav-item-decoration">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Get Started</a>
+                        </li>
+                    </div>
+                </ul>
+                <div class="hamburger">
+                    <img class="hamburguer-image" src="assets/images/icon-hamburger.svg">
+                </div>
+            </nav>
+            <!-- termina div menu -->
+        </header>
+
+        <!-- Inicia Contenedor de cartas -->
+        <div class="container-cards">
+            <!-- Carta de introducción -->
+            <section class="user-picture-profile">
+                <img src="assets/images/logo-mastercraft.svg">
+            </section>
+
+            <section class="card">
+                <section class="project-info">
+                    <h1 class="project-title">Mastercraft Bamboo Monitor Riser</h1>
+                </section>
+                <section class="project-info">
+                    <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+                </section>
+                <!-- Botones -->
+                <section class="back-project">
+                    <section>
+                        <button class="enable-button" onclick="location.href='#main-modal'">Back this project</button>
+
+                    </section>
+                    <section class="bookmark-container">
+                        <div class="bookmark-icon" onclick="bookmarkClick()">
+                            <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none" fill-rule="evenodd">
+                                    <circle id="bookmark-circle" fill="#2F2F2F" cx="28" cy="28" r="28" />
+                                    <path id="bookmark-path" fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <button id="bookmark-button" class="bookmark-button" onclick="bookmarkClick()"
+                            onmouseenter="bookmarkIconColorEnter()"
+                            onmouseleave="bookmarkIconColorLeave()">Bookmark</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Carta de estadisticas -->
+            <section class="card">
+                <section class="stats decoration">
+                    <h1>$89,914</h1>
+                    <p>of $100,000 backed</p>
+                </section>
+                <section class="stats decoration">
+                    <h1>5,007</h1>
+                    <p>total backers</p>
+
+                </section>
+                <section class="stats">
+                    <h1>56</h1>
+                    <p>days left</p>
+                </section>
+                <section>
+                    <button class="progress-bar"> </button>
+                </section>
+            </section>
+
+            <!-- Carta about -->
+            <section class="card">
+                <h2>About this project</h2>
+                <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates
+                    your screen to a more comfortable viewing height. Placing your monitor at eye level has
+                    the potential to improve your posture and make you more comfortable while at work,
+                    helping you stay focused on the task at hand.</p>
+
+                <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below
+                    your computer to allow notepads, pens, and USB sticks to be stored under the stand.</p>
+
+                <!-- Cartas con paquetes -->
+                <!-- Paquete 1 -->
+                <section class="card package">
+                    <!-- Titulo del paquete y cantidad -->
+                    <section class="two-items">
+                        <h3>Bamboo Stand</h3>
+                        <p class="price-text">Pledge $25 or more</p>
+                    </section>
+                    <!-- Descripcion del paquete -->
+                    <section>
+                        <p>You get an ergonomic stand made of natural bamboo. You've helped us launch
+                            our promotional campaign, and you’ll be added to a special Backer member list</p>
+                    </section>
+                    <!-- cantidad restante y boton de rewards -->
+                    <section class="two-items">
+                        <div class="available-items">
+
+                            <h1 class="item">101</h1>
+
+
+                            <p class="item">left</p>
+
+                        </div>
+                        <button class="enable-button rewards" onclick="location.href='#main-modal'">Select
+                            Reward</button>
+                    </section>
+                </section>
+                <!-- Paquete 2 -->
+                <section class="card package">
+                    <!-- Titulo del paquete y cantidad -->
+                    <section class="two-items">
+                        <h3>Black Edition Stand</h3>
+                        <p class="price-text">Pledge $75 or more</p>
+                    </section>
+                    <!-- Descripcion del paquete -->
+                    <section>
+                        <p>You get a Black Special Edition computer stand and a personal thank you. You’ll
+                            be added to our Backer member list. Shipping is included.</p>
+                    </section>
+                    <!-- cantidad restante y boton de rewards -->
+                    <section class="two-items">
+                        <div class="available-items">
+
+                            <h1 class="item">64</h1>
+
+                            <p>left</p>
+
+                        </div>
+                        <button class="enable-button rewards" onclick="location.href='#main-modal'">Select
+                            Reward</button>
+                    </section>
+                </section>
+
+                <!-- Paquete 3 -->
+                <section class="card package disabled">
+                    <!-- Titulo del paquete y cantidad -->
+                    <section class="two-items">
+                        <h3>Mahogany Special Edition</h3>
+                        <p class="price-text">Pledge $200 or more</p>
+                    </section>
+                    <!-- Descripcion del paquete -->
+                    <section>
+                        <p>You get two Special Edition Mahogany stands, a Backer T Shirt, and a personal
+                            thank you. You’ll be added to our Backer member list. Shipping is included.</p>
+                    </section>
+                    <!-- cantidad restante y boton de rewards -->
+                    <section class="two-items">
+                        <div class="available-items">
+
+                            <h1 class="item">0</h1>
+
+                            <p>left</p>
+
+                        </div>
+                        <button class="enable-button rewards" disabled>Out of stock</button>
+                    </section>
+
+                </section>
+                <!-- Termina paquete 3 -->
+            </section>
+            <!-- Termine Card about -->
+        </div>
+    </main>
+
+    <!-- VENTANAS MODALES -->
+
+    <!-- Ventana modal de paquetes -->
+    <div id="main-modal" class="modal">
+        <div class="content-modal">
+
+            <!-- Card about -->
+            <section class="card">
+                <section class="close-modal">
+                    <svg onclick="location.href='index.html'" class="close-modal-icon" width="15" height="15"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+                            fill="#000" fill-rule="evenodd" opacity=".4" />
+                    </svg>
+                </section>
+                <section>
+                    <h2>Back this project</h2>
+                    <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world? </p>
+                </section>
+
+                <!-- Cartas con paquetes -->
+                <!-- Paquete 1 -->
+                <section class="card package" id="pack1">
+                    <div class="radio-button-cards">
+                        <!-- Radio button -->
+                        <div class="radio-button-aside">
+                            <aside>
+                                <label class="container">
+                                    <input type="radio" name="fav_package" id="radio-pack1"
+                                        onclick="radioButtonsChecked()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </aside>
+                        </div>
+                        <div>
+                            <!-- Titulo del paquete y cantidad -->
+                            <section class="two-items">
+                                <h3 id="title-pack1" onclick="titlePacksOnClick(this.id)">Pledge with no reward</h3>
+                            </section>
+                            <!-- Descripcion del paquete -->
+                            <section>
+                                <p>Choose to support us without a reward if you simply believe in our project. As a
+                                    backer,
+                                    you will be signed up to receive product updates via email.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Sección para ingresar cantidad -->
+                    <section class="enter-pledge" id="enter-pledge1">
+                        <!-- Input y boton continue -->
+                        <section>
+                            <p class="item">Enter your email</p>
+                        </section>
+                        <div>
+                            <input type="text" class="button" id="input-pack1">
+                            <button class="enable-button rewards continue"
+                                onclick="location.href='#confirmation-modal'">Continue</button>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Paquete 2 -->
+                <section class="card package" id="pack2">
+                    <!-- Radio button e información del paquete -->
+                    <div class="radio-button-cards">
+
+                        <!-- Radio button -->
+                        <div class="radio-button-aside">
+                            <aside>
+                                <label class="container">
+                                    <input type="radio" name="fav_package" id="radio-pack2"
+                                        onclick="radioButtonsChecked()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </aside>
+                        </div>
+
+                        <!-- Titulo del paquete y cantidad -->
+                        <div>
+                            <section class="two-items">
+                                <section>
+                                    <section class="available-items">
+                                        <h3 id="title-pack2" onclick="titlePacksOnClick(this.id)">Bamboo Stand</h3>
+                                    </section>
+                                    <section class="available-items">
+                                        <p class="price-text">Pledge $25 or more</p>
+                                    </section>
+                                </section>
+                                <!-- Cantidad restante de items -->
+                                <section class="available-desktop">
+                                    <section class="available-items">
+                                        <h2 class="item">101</h1>
+                                    </section>
+                                    <section class="available-items">
+                                        <p class="item">left</p>
+                                    </section>
+                                </section>
+
+                            </section>
+                            <!-- Descripcion del paquete -->
+                            <section>
+                                <p>You get an ergonomic stand made of natural bamboo. You've helped us launch
+                                    our promotional campaign, and you’ll be added to a special Backer member list</p>
+                            </section>
+                            <section class="available-responsive">
+                                <section class="available-items">
+                                    <h2 class="item">101</h2>
+                                </section>
+                                <section class="available-items">
+                                    <p class="item">left</p>
+                                </section>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Sección para ingresar cantidad -->
+                    <section class="enter-pledge" id="enter-pledge2">
+                        <!-- Input y boton continue -->
+                        <section>
+                            <p class="item">Enter your pledge</p>
+                        </section>
+                        <div>
+                            <input type="number" class="button" id="input-pack2">
+                            <button class="enable-button rewards continue"
+                                onclick="location.href='#confirmation-modal'">Continue</button>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Paquete 3 -->
+                <section class="card package" id="pack3">
+                    <!-- Radio button e información del paquete -->
+                    <div class="radio-button-cards">
+
+                        <!-- Radio button -->
+                        <div class="radio-button-aside">
+                            <aside>
+                                <label class="container">
+                                    <input type="radio" name="fav_package" id="radio-pack3"
+                                        onclick="radioButtonsChecked()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </aside>
+                        </div>
+
+                        <!-- Titulo del paquete y cantidad -->
+                        <div>
+                            <section class="two-items">
+                                <section>
+                                    <section class="available-items">
+                                        <h3 id="title-pack3" onclick="titlePacksOnClick(this.id)">Black Edition Stand
+                                        </h3>
+                                    </section>
+                                    <section class="available-items">
+                                        <p class="price-text">Pledge $75 or more</p>
+                                    </section>
+                                </section>
+                                <!-- Cantidad restante de items -->
+                                <section class="available-desktop">
+                                    <section class="available-items">
+                                        <h2 class="item">64</h2>
+                                    </section>
+                                    <section class="available-items">
+                                        <p class="item">left</p>
+                                    </section>
+                                </section>
+
+                            </section>
+                            <!-- Descripcion del paquete -->
+                            <section>
+                                <p>You get a Black Special Edition computer stand and a personal thank you.
+                                    You’ll be added to our Backer member list. Shipping is included.</p>
+                            </section>
+                            <section class="available-responsive">
+
+                                <section class="available-items">
+                                    <h2 class="item">64</h2>
+                                </section>
+                                <section class="available-items">
+                                    <p class="item">left</p>
+                                </section>
+
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Sección para ingresar cantidad -->
+                    <section class="enter-pledge" id="enter-pledge3">
+                        <!-- Input y boton continue -->
+                        <section>
+                            <p class="item">Enter your pledge</p>
+                        </section>
+                        <div>
+                            <input type="number" class="button" id="input-pack3">
+                            <button class="enable-button rewards continue"
+                                onclick="location.href='#confirmation-modal'">Continue</button>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Paquete 4 -->
+                <section class="card package disabled">
+                    <!-- Radio button e información del paquete -->
+                    <div class="radio-button-cards">
+
+                        <!-- Radio button -->
+                        <div class="radio-button-aside">
+                            <aside>
+                                <input type="radio" id="html" name="fav_package" value="HTML">
+                            </aside>
+                        </div>
+
+                        <!-- Titulo del paquete y cantidad -->
+                        <div>
+                            <section class="two-items">
+                                <section>
+                                    <section class="available-items">
+                                        <h3>Mahogany Special Edition</h3>
+                                    </section>
+                                    <section class="available-items">
+                                        <p class="price-text">Pledge $200 or more</p>
+                                    </section>
+                                </section>
+                                <!-- Cantidad restante de items -->
+                                <section class="available-desktop">
+                                    <section class="available-items">
+                                        <h2 class="item">0</h1>
+                                    </section>
+                                    <section class="available-items">
+                                        <p class="item">left</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <!-- Descripcion del paquete -->
+                            <section>
+                                <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank
+                                    you.
+                                    You’ll be added to our Backer member list. Shipping is included.</p>
+                            </section>
+                            <section class="available-responsive">
+                                <section class="available-items">
+                                    <h2 class="item">0</h2>
+                                </section>
+                                <section class="available-items">
+                                    <p class="item">left</p>
+                                </section>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Sección para ingresar cantidad -->
+                    <section class="enter-pledge" id="enter-pledge4">
+                        <!-- Input y boton continue -->
+                        <section>
+                            <p class="item">Enter your pledge</p>
+                        </section>
+                        <div>
+                            <input type="number" class="button">
+                            <button class="enable-button rewards continue" disabled
+                                onclick="location.href='#confirmation-modal'">Continue</button>
+                        </div>
+                    </section>
+                </section>
+                <!-- Termina paquetes -->
+            </section>
+            <!-- Termina Card about -->
+        </div>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="confirmation-modal" class="modal">
+        <div class="thanks-modal">
+            <!-- Card about -->
+            <section class="card confirmation">
+                <section class="card-confirmation-content">
+                    <img src="assets/images/icon-check.svg">
+                </section>
+                <section class="card-confirmation-content">
+                    <h1>Thanks for your support!</h1>
+                </section>
+                <section class="card-confirmation-content">
+                    <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide.
+                        You will get an email once our campaign is completed. </p>
+                </section>
+                <section class="card-confirmation-content">
+                    <button class="enable-button rewards" onclick="location.href='index.html'">Got it!</button>
+                </section>
+            </section>
+        </div>
+    </div>
+</body>
+<footer>
+
+    <!-- JS -->
+    <script src="assets/scripts/script.js"></script>
+</footer>
+
+</html>
