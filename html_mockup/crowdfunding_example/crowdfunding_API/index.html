@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles/css/app.css">
+
+    <!-- TITLE -->
+    <title>crowdfund</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" />
+</head>
+
+<body>
+    <main id="main">
+        <header class="header">
+            <!-- inicia menu superior -->
+            <div class="header-shadow">
+                <nav class="navbar">
+                    <a href="#"><img src="assets/images/logo.svg"></a>
+                    <ul class="navbar__menu">
+                        <div class="navbar__item-box navbar__item-box--border-bottom">
+                            <li class="navbar__item">
+                                <a href="#" class="navbar__link">About</a>
+                            </li>
+                        </div>
+                        <div class="navbar__item-box navbar__item-box--border-bottom">
+                            <li class="navbar__item">
+                                <a href="#" class="navbar__link">Discover</a>
+                            </li>
+                        </div>
+                        <div class="navbar__item-box">
+                            <li class="navbar__item">
+                                <a href="#" class="navbar__link">Get Started</a>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="hamburger-menu">
+                        <img class="hamburger-menu__icon" src="assets/images/icon-hamburger.svg">
+                    </div>
+                </nav>
+            </div>
+            <!-- termina div menu -->
+        </header>
+
+        <!-- Inicia Contenedor de cartas -->
+        <div class="card-container">
+            <!-- Carta de introducción -->
+            <section class="profile-picture">
+                <img class="profile-picture__image" src="assets/images/logo-mastercraft.svg">
+            </section>
+
+            <section class="card">
+                <section class="card__project-info">
+                    <h1 id="project_title" class="card__main-title">Project</h1>
+                    <p id="project_subtitle" class="card__main-description">Description</p>
+                </section>
+                <!-- Botones -->
+                <section class="card__buttons">
+                    <section>
+                        <button class="basic-button" onclick="location.href='#main-modal'">Back this project</button>
+                    </section>
+                    <section class="bookmark__container">
+                        <div id="bookmark-icon" class="bookmark__icon"
+                            onclick="postBookmarkState(this.getAttribute('data-bookmark-status'))">
+                            <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none" fill-rule="evenodd">
+                                    <circle id="bookmark-circle" class="bookmark__circle" cx="28" cy="28" r="28" />
+                                    <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <button id="bookmark-button" class="bookmark__button"
+                            onclick="postBookmarkState(this.getAttribute('data-bookmark-status'))"></button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Carta de estadisticas -->
+            <section class="card">
+                <section class="card__stats card__stats--lateral-line">
+                    <h1 id="total_backed_amount" class="card__stats-number">$0</h1>
+                    <p id="minimum_funding_amount" class="card__stats-description">of $0 backed</p>
+                </section>
+                <section class="card__stats card__stats--lateral-line">
+                    <h1 id="total_backers" class="card__stats-number">0</h1>
+                    <p class="card__stats-description">total backers</p>
+                </section>
+                <section class="card__stats">
+                    <h1 id="days_left" class="card__stats-number">0</h1>
+                    <p class="card__stats-description">days left</p>
+                </section>
+                <section>
+                    <progress id="backed_progress_bar" class="card__progress-bar" value="80" max="100"> </progress>
+                </section>
+            </section>
+
+            <!-- Carta about -->
+            <section class="card">
+                <h2 class="card__title">About this project</h2>
+                <p id="about_description" class="card__text"></p>
+
+                <!-- Cartas con paquetes -->
+                <!-- Paquetes -->
+                <div id="tier">
+                    <!-- Aqui van las tarjetas de los tiers -->
+                </div>
+            </section>
+            <!-- Termine Card about -->
+        </div>
+    </main>
+
+    <!-- VENTANAS MODALES -->
+
+    <!-- Ventana modal de paquetes -->
+    <div id="main-modal" class="modal-overlay">
+        <div id="content-modal" class="content-modal">
+            <!-- Card about -->
+            <section class="card">
+                <section class="close-modal">
+                    <svg onclick="location.href='index.html'" class="close-modal-icon" width="15" height="15"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+                            fill="#000" fill-rule="evenodd" opacity=".4" />
+                    </svg>
+                </section>
+                <section>
+                    <h2 class="card__title">Back this project</h2>
+                    <p id="about-modal" class="card__text">Want to support us? </p>
+                </section>
+
+                <!-- Cartas con paquetes -->
+                <!-- Paquete 1 -->
+                <section class="card card-with-border" id="pack1" name="tier_id">
+                    <div class="tier">
+                        <!-- Radio button -->
+                        <div class="tier__radio-button-box">
+                            <aside>
+                                <label class="custom-radio-button">
+                                    <input type="radio" name="fav_package" id="radio-pack1"
+                                        onclick="onTierSelected(this.id)">
+                                    <span class="custom-radio-button__checkmark"></span>
+                                </label>
+                            </aside>
+                            <!-- Titulo del paquete y cantidad -->
+                            <section class="tier__top-section">
+                                <h3 class="tier__title" id="title-pack1" onclick="onTierSelected(this.id)">Pledge
+                                    with no reward</h3>
+                            </section>
+                        </div>
+                        <div>
+                            <!-- Descripcion del paquete -->
+                            <section class="tier__description">
+                                <p>Choose to support us without a reward if you simply believe in our project. As a
+                                    backer, you will be signed up to receive product updates via email.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Sección para ingresar cantidad -->
+                    <section class="tier__pledge" id="enter-pledge1">
+                        <!-- Input y boton continue -->
+                        <p class="tier__pledge-text">Enter your email</p>
+                        <div>
+                            <input type="text" class="button" id="input-pack1">
+                            <button class="basic-button basic-button--continue"
+                                onclick="location.href='#confirmation-modal'">Continue</button>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Paquete 2 -->
+                <div id="tierOption">
+                    <!-- Aqui van las tarjetas de los tiers -->
+                </div>
+            </section>
+            <!-- Termina Card about -->
+        </div>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="confirmation-modal" class="modal-overlay">
+        <div class="confirmation-modal-box">
+            <!-- Card about -->
+            <section class="confirmation-card">
+                <section class="confirmation-card-content">
+                    <img class="confirmation-card__icon" src="assets/images/icon-check.svg">
+                    <h1 class="confirmation-card__title">Thanks for your support!</h1>
+                    <p id="confirmation-modal-text" class="confirmation-card__text">Your pledge brings us one step
+                        closer.
+                        You will get an email once our campaign is completed. </p>
+                    <button class="basic-button basic-button--continue" onclick="location.href='index.html'">Got
+                        it!</button>
+                </section>
+            </section>
+        </div>
+    </div>
+</body>
+<footer>
+    <!-- JS -->
+    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/fondeando_api.js"></script>
+</footer>
+
+</html>

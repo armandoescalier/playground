@@ -1,0 +1,11 @@
+.content-modal {
+    max-width: 700px;
+    padding: 10px 20px;
+    margin: 9% auto;
+    position: relative;
+}
+
+#main-modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}

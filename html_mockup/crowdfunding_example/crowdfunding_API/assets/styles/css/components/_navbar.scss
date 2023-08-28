@@ -1,0 +1,92 @@
+/*
+  ========================================
+  Menu
+  ========================================
+*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 45px;
+    margin: 0px 12%;
+    max-width: 1440px;
+
+    @media screen and (max-width: $break-point-mobile) {
+        margin: 0px 5%;
+    }
+}
+
+.hamburger-menu {
+    display: none;
+
+    @media screen and (max-width: $break-point-mobile) {
+        display: block;
+        cursor: pointer;
+
+        &.active{
+            content: url("../../images/icon-close-menu.svg ") ;
+        }
+    }
+}
+
+.navbar__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: $break-point-mobile) {
+        position: fixed;
+        left: -100%;
+        top: 15%;
+        flex-direction: column;
+        background-color: $bg-color;
+        width: 90%;
+        border-radius: 10px;
+        transition: 0.3s;
+        margin: 0px 5%;
+        box-shadow: 0 20px 27px $bg-modal-overlay;
+        z-index: 1;
+    }
+}
+
+.navbar__menu.active {
+    @media screen and (max-width: $break-point-mobile) {
+        left: 0;
+    }
+}
+
+.navbar__item {
+    margin-left: 3rem;
+
+    @media screen and (max-width: $break-point-mobile) {
+        margin: 15px;
+        width: 90%;
+        height: 20px;
+    }
+}
+
+.navbar__item-box {
+    @media screen and (max-width: $break-point-mobile) {
+        width: 100%;
+        padding: 10px 0px;
+    }
+}
+
+.navbar__item-box--border-bottom {
+    @media screen and (max-width: $break-point-mobile) {
+        width: 100%;
+        border-bottom: 1px solid $light;
+    }
+}
+
+.navbar__link {
+    font-weight: 500;
+    color: $nav-text-color;
+
+    @media screen and (max-width: $break-point-mobile) {
+        color: $nav-mobile-text-color ;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}

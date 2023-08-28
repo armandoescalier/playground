@@ -1,0 +1,20 @@
+/*
+  ========================================
+  Profile picture
+  ========================================
+*/
+
+.profile-picture {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    bottom: -25px;
+}
+
+.profile-picture__image {
+    max-width: 56px;
+    max-height: 56px;
+    border-radius: 50%;
+}

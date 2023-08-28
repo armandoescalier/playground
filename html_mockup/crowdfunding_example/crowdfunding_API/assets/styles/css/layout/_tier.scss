@@ -1,0 +1,123 @@
+
+/*
+  ========================================
+  Tier
+  ========================================
+*/
+
+.tier {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 5%;
+}
+
+.tier--vertical {
+    flex-direction: column;
+}
+
+.tier__pledge-range {
+    color: $primary;
+    font-weight: 500;
+    padding: 0px;
+
+    @media screen and (max-width: $break-point-mobile) {
+        padding: 5px 0px 0px;
+    }
+}
+
+.tier__title {
+    display: flex;
+    margin-right: 10px;
+    padding: 0px;
+    place-items: center;
+    font-size: 16px;
+}
+
+.tier__title:hover {
+    color: $primary;
+    cursor: pointer;
+}
+
+.tier__description{
+    margin: 20px 0px;
+    margin-left: 50px;
+
+    &.project-page{
+        margin-left: 0px;
+    }
+    
+    @media screen and (max-width: $break-point-mobile) {
+        margin-left: 0px;
+    }
+}
+
+.tier__radio-button-box {
+    margin-top: 10px;
+    padding: 0px 5px;
+}
+
+.tier__top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 45px;
+
+    &.project-page{
+        margin-left: 0px;
+    }
+
+    @media screen and (max-width: $break-point-mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.tier__top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: $break-point-mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.tier__pledge {
+    display: none;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top: 1px solid $light;
+    padding: 5%;
+
+    @media screen and (max-width: $break-point-mobile) {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 2% 5% 5% 5%;
+    }
+}
+
+.tier_display{
+    display: flex;
+}
+
+.tier__pledge-text{
+    display: flex;
+    place-items: center;
+    padding: 15px;
+}
+
+.tier__bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0px 10px 0px;
+
+    @media screen and (max-width: $break-point-mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

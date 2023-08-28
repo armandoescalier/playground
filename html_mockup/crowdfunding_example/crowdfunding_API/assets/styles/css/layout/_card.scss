@@ -1,0 +1,125 @@
+/*
+  ========================================
+  Cards
+  ========================================
+*/
+
+.card-container {
+    max-width: 730px;
+    margin: auto;
+    position: relative;
+    top: -150px;
+
+    @media screen and (max-width: $break-point-mobile) {
+        margin: auto;
+        padding: 20px;
+        min-width: 300px;
+    }
+}
+
+.card {
+    width: auto;
+    height: 50%;
+    padding: 4% 5%;
+    background-color: $bg-color;
+    border-radius: 8px;
+    margin: 0 1.5% 4% 1.5%;
+    min-width:fit-content;
+
+    &.card-with-border {
+        border: 1px solid $light;
+        padding: 0px;
+        position: relative;
+        overflow: hidden;
+    
+        &.primary-border{
+            border: 2px solid $primary;
+        }
+    }
+}
+
+.card__main-title {
+    font-size: 28px;
+
+    @media screen and (max-width: $break-point-mobile) {
+        font-size: 20px;
+    }
+}
+
+.card__main-description{
+    padding: 15px 0px;
+}
+
+.card__title {
+    margin: 10px 0px;
+}
+
+.card__text {
+    margin: 35px 0px ;
+
+    @media screen and (max-width: $break-point-mobile) {
+        margin: 5px;
+        padding: 0px 0px 20px 0px;
+    }
+}
+
+.card__project-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.card__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card--disabled:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: $disabled-card;
+}
+
+.card__stats {
+    float: left;
+    margin: 3% 1.5%;
+    width: 30%;
+
+    @media screen and (max-width: $break-point-mobile) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: max-content;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.card__stats-number {
+    @media screen and (max-width: $break-point-mobile) {
+        font-size: 32px;
+    }
+}
+
+.card__stats-description{
+    margin: 10px 0px;
+}
+
+.card__stats--lateral-line {
+    border-right: 1px solid $light;
+    border-bottom: none;
+
+    @media screen and (max-width: $break-point-mobile) {
+        border-bottom: 1px solid $light;
+        border-right: none;
+    }
+}

@@ -1,0 +1,31 @@
+/*
+  ========================================
+  Available items
+  ========================================
+*/
+
+.available-items {
+    display: flex;
+    align-items: center;
+}
+
+.available-items--desktop {
+    flex-direction: row;
+
+    @media screen and (max-width: $break-point-mobile) {
+        display: none;
+    }
+}
+
+.available-items--mobile {
+    display: none;
+
+    @media screen and (max-width: $break-point-mobile) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.available-items__text {
+    padding-left: 5px;
+}
