@@ -1,0 +1,29 @@
+/*
+  ========================================
+  Header
+  ========================================
+*/
+
+header {
+    margin: auto;
+    max-width: 1440px;
+    min-width: 345px;
+    height: 400px;
+    background-image: url(../../images/image-hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+
+    @media screen and (max-width: $break-point-mobile) {
+      background-image: url(../../images/image-hero-mobile.jpg);
+      background-size: cover;
+    }
+}
+
+.header-shadow{
+  margin: auto;
+  max-width: 1440px;
+  min-width: 345px;
+  height: 30%;
+  background: linear-gradient($bg-modal-overlay , rgba(255, 255, 255, 0));
+}

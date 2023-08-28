@@ -1,0 +1,17 @@
+/*
+  ========================================
+  Confirmation Modal
+  ========================================
+*/
+.confirmation-modal-box {
+    max-width: 540px;
+    height: 450px;
+    padding: 10px 20px;
+    margin: 9% auto;
+    position: relative;
+}
+
+#confirmation-modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}

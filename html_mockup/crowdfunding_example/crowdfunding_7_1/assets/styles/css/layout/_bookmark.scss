@@ -1,0 +1,24 @@
+.bookmark {
+    width: 174px;
+    height: 50px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+
+    @media screen and (max-width: $break-point-mobile) {
+        width: max-content;
+    }
+}
+
+.bookmark__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+    @media screen and (max-width: $break-point-mobile) {
+        position: absolute;
+        left: auto;
+        right: 0;
+    }
+}

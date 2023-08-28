@@ -1,0 +1,75 @@
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+
+button {
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/*
+  ========================================
+  Basic Buttons
+  ========================================
+*/
+
+.basic-button {
+    background-color: $primary;
+    width: 200px;
+    height: 50px;
+    color: $button-text-color;
+}
+
+.basic-button:hover:enabled {
+    background-color: $primary-dark;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.basic-button--rewards {
+    width: 151px;
+    height: 48px;
+
+    @media screen and (max-width: $break-point-mobile) {
+        margin: 25px 0px 0px;
+    }
+}
+
+.basic-button--continue {
+    width: 110px;
+    height: 48px;
+    margin: 15px;
+}
+
+button:disabled, button[disabled] {
+    background-color: $disabled-color;
+    cursor: default;
+}
+
+/*
+  ========================================
+  Bookmark Buttons
+  ========================================
+*/
+.bookmark__button {
+    background-color: $secondary;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: $light-dark;
+    padding-left: 30%;
+
+    @media screen and (max-width: $break-point-mobile) {
+        display: none;
+    }
+}
+
+.bookmark__button:focus {
+    color: $primary-dark;
+}

@@ -1,0 +1,33 @@
+/*
+  ========================================
+  Confirmation Card
+  ========================================
+*/
+
+.confirmation-card {
+    width: auto;
+    height: max-content;
+    padding: 6% 5%;
+    background-color: $bg-color;
+    border-radius: 8px;
+    position: absolute;
+    margin: 20px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.confirmation-card__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.confirmation-card__text {
+    margin-bottom: 20px;
+}
+
+.confirmation-card__icon {
+    margin-bottom: 20px;
+}

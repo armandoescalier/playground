@@ -1,0 +1,83 @@
+/*
+  ========================================
+  Default values
+  ========================================
+*/
+
+:root{
+
+/*
+  ========================================
+  Colors
+  ========================================
+*/
+    --primary: hsl(176, 50%, 47%);
+    --primary-dark : hsl(176, 72%, 28%) ;
+    --secondary: #eee;
+    --secondary-dark: hsl(0, 0%, 48%);
+    --light:hsl(0, 0%, 70%);
+    --light-dark:hsl(0, 0%, 48%);
+    
+    --white: #fff;
+    --black:hsl(0, 0%, 0%);
+    --disabled-color:#ccc;
+    --disabled-card: rgba(255, 255, 255, 0.6);
+    
+/*
+  ========================================
+  Text Colors
+  ========================================
+*/
+    --paragrah-color:hsl(0, 0%, 48%);
+    --button-text-color: #fff;
+    --nav-text-color: #fff;
+    --nav-mobile-text-color: #000;
+    --title-text-color: #000;
+    --links-text-color: #fff;
+    
+/*
+  ========================================
+  Backgrounds colors
+  ========================================
+*/
+    --bg-color: #fff;
+    --main-bg-color: #eee;
+    --bg-modal-overlay: rgba(0, 0, 0, 0.7);
+}
+
+
+
+/*
+  ========================================
+  Variables
+  ========================================
+*/
+
+// Colors
+$primary: var(--primary);
+$primary-dark: var(--primary-dark);
+$secondary: var(--secondary);
+$secondary-dark: var(--secondary-dark);
+$light: var(--light);
+$light-dark:var(--light-dark);
+
+$white: var(--white);
+$black: var(--black);
+$disabled-color: var(--disabled-color);
+$disabled-card: var(--disabled-card);
+
+// Text colors
+$paragraph-color: var(--paragrah-color);
+$button-text-color: var(--button-text-color);
+$nav-text-color: var(--nav-text-color);
+$nav-mobile-text-color: var(--nav-mobile-text-color);
+$title-text-color: var(--title-text-color);
+$links-text-color:var(--links-text-color);
+
+// Background colors
+$bg-color: var(--bg-color);
+$main-bg-color: var(--main-bg-color);
+$bg-modal-overlay: var(--bg-modal-overlay);
+
+// Break point value
+$break-point-mobile: 750px;

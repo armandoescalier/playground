@@ -1,0 +1,49 @@
+
+/*
+  ========================================
+  Inputs
+  ========================================
+*/
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    caret-color: $primary;
+}
+
+input[type=number] {
+    font-weight: 700;
+    width: 100px;
+    height: 48px;
+    border: 1px solid $light;
+    border-radius: 50px;
+    outline: none;
+    text-align: center;
+    background-image: url("../../images/dollar-sign.svg");
+    background-position: 20% 50%;
+    background-repeat: no-repeat;
+}
+
+input[type=text] {
+    font-weight: 700;
+    width: 180px;
+    height: 48px;
+    border: 1px solid $light;
+    border-radius: 50px;
+    outline: none;
+    text-align: center;
+}
+
+input[type=radio] {
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $light;
+}
+
+input:focus {
+    border-color: $primary;
+}

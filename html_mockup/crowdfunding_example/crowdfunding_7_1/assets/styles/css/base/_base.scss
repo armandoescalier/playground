@@ -1,0 +1,96 @@
+/*
+  ========================================
+  Default values
+  ========================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+* {
+    text-decoration: none;
+}
+
+/*
+  ========================================
+  Body
+  ========================================
+*/
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    background-color: $main-bg-color;
+    color: $paragraph-color;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+body {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.block-scroll {
+    overflow: hidden;
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1 {
+    color: $title-text-color;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h2 {
+    color: $title-text-color;
+    font-size: 20px;
+    font-weight: 700;
+    
+    @media screen and (max-width: $break-point-mobile) {
+        font-size: 18px;
+        padding: 15px 0px;
+    }
+
+}
+
+h3 {
+    color: $title-text-color;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0px;
+
+    @media screen and (max-width: $break-point-mobile) {
+        font-size: 14px;
+    }
+}
+
+p {
+    color: $paragraph-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    
+    @media screen and (max-width: $break-point-mobile) {
+        font-size: 14px;
+    }
+}
+
+a {
+    color: $links-text-color;
+    font-size: 13px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

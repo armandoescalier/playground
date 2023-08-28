@@ -1,0 +1,46 @@
+/*
+  ========================================
+  Modal
+  ========================================
+*/
+
+.modal-overlay {
+    background-color: $bg-modal-overlay;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: auto;
+    /*permite scroll en modal*/
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.modal-overlay::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.modal-overlay {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.close-modal {
+    float: right;
+}
+
+.close-modal:hover {
+    cursor: pointer;
+}
+
+.close-modal-icon:hover path {
+    fill: $black;
+    opacity: 1;
+}
