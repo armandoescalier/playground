@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+/*
+  ========================================
+  RESET 
+  ========================================
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+  ========================================
+  Default values
+  ========================================
+*/
+
+* {
+    text-decoration: none;
+    --moderate-cyan: hsl(176, 50%, 47%);
+    --dark-cyan: hsl(176, 72%, 28%);
+    --black: hsl(0, 0%, 0%);
+    --dark-gray: hsl(0, 0%, 48%);
+    --light-gray: hsl(0, 0%, 70%);
+    --white: #fff;
+    --disabled-color: #cccccc;
+    --background-color: #eee;
+    --text-color: hsl(0, 0%, 48%);
+    /* border: 1px dotted red !important; */
+}
+
+/*
+  ========================================
+  Body
+  ========================================
+*/
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+body {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.block-scroll {
+    overflow: hidden;
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1 {
+    color: var(--black);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--black);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+h3 {
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0px;
+}
+
+p {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 0px;
+    line-height: 1.8;
+}
+
+a {
+    color: var(--white);
+    font-size: 13px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*
+  ========================================
+  Header
+  ========================================
+*/
+
+header {
+    margin: auto;
+    max-width: 1440px;
+    height: 400px;
+    background-image: url(../images/image-hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+/*
+  ========================================
+  Menu
+  ========================================
+*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    margin: 0px 10%;
+    max-width: 1440px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.navbar__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__item {
+    margin-left: 3rem;
+}
+
+.navbar__link {
+    font-weight: 500;
+    color: var(--white);
+}
+
+/*
+  ========================================
+  User / project image
+  ========================================
+*/
+
+.user-profile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    bottom: -25px;
+}
+
+.user-profile__image {
+    max-width: 56px;
+    max-height: 56px;
+    border-radius: 50%;
+}
+
+/*
+  ========================================
+  Cards
+  ========================================
+*/
+
+.card-container {
+    max-width: 730px;
+    margin: auto;
+    position: relative;
+    top: -150px;
+}
+
+.card {
+    width: auto;
+    height: 50%;
+    padding: 4% 5%;
+    background-color: var(--white);
+    border-radius: 8px;
+    color: #fff;
+    margin: 0 1.5% 4% 1.5%;
+}
+
+.card__main-title {
+    font-size: 28px;
+}
+
+.card__title {
+    margin: 10px 0px 10px 0px;
+}
+
+.card__text {
+    margin: 10px 0px 10px 0px;
+}
+
+.card__project-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.card__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card--gray-border {
+    border: 1px solid var(--light-gray);
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card--disabled:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.card__stats {
+    float: left;
+    margin: 3% 1.5%;
+    width: 30%;
+}
+
+.card__stats--lateral-line {
+    border-right: 1px solid var(--light-gray);
+    border-bottom: none;
+}
+
+/*
+  ========================================
+  Confirmation Card
+  ========================================
+*/
+
+.confirmation-card {
+    width: auto;
+    height: max-content;
+    padding: 6% 5%;
+    background-color: var(--white);
+    border-radius: 8px;
+    color: #fff;
+    position: absolute;
+    margin: 20px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.confirmation-card__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.confirmation-card__text {
+    margin-bottom: 20px;
+}
+
+.confirmation-card__icon {
+    margin-bottom: 20px;
+}
+
+/*
+  ========================================
+  Tier
+  ========================================
+*/
+
+.tier {
+    display: flex;
+    padding: 5% 7%;
+}
+
+.tier--vertical {
+    flex-direction: column;
+}
+
+.tier__pledge-range {
+    color: var(--moderate-cyan);
+    font-weight: 500;
+    padding: 0px 0px 10px 0px;
+}
+
+.tier__title {
+    padding-right: 15px;
+    padding-top: 0px;
+}
+
+.tier__title:hover {
+    color: var(--moderate-cyan);
+    cursor: pointer;
+}
+
+.tier__radio-button-box {
+    margin-top: 10px;
+    padding: 0px 5px;
+}
+
+.tier__top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tier__top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tier__bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0px 10px 0px;
+}
+
+.tier__pledge {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top: 1px solid var(--light-gray);
+    padding: 5%;
+}
+
+/*
+  ========================================
+  Available items
+  ========================================
+*/
+
+.available-items {
+    display: flex;
+    align-items: center;
+}
+
+.available-items--desktop {
+    flex-direction: row;
+}
+
+.available-items--mobile {
+    display: none;
+}
+
+.available-items__text {
+    padding-left: 5px;
+}
+
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+
+button {
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.enable-button {
+    background-color: var(--moderate-cyan);
+    width: 200px;
+    height: 50px;
+    color: var(--white);
+}
+
+.enable-button:hover:enabled {
+    background-color: var(--dark-cyan);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.enable-button--rewards {
+    width: 151px;
+    height: 48px;
+}
+
+.enable-button--continue {
+    width: 110px;
+    height: 48px;
+    margin-left: 15px;
+}
+
+button:disabled, button[disabled] {
+    background-color: var(--disabled-color);
+    cursor: default;
+}
+
+.bookmark {
+    width: 174px;
+    height: 50px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.bookmark__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.bookmark__button {
+    background-color: var(--background-color);
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: var(--dark-gray);
+    padding-left: 30%;
+}
+
+.bookmark__button:focus {
+    color: var(--dark-cyan);
+}
+
+/*
+  ========================================
+  Custom Radio Button
+  ========================================
+*/
+
+.custom-radio-button {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+
+.custom-radio-button input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+
+.custom-radio-button__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a border color */
+
+.custom-radio-button:hover input~.custom-radio-button__checkmark {
+    border-color: var(--moderate-cyan);
+}
+
+/* When the radio button is checked, add a background */
+
+.custom-radio-button input:checked~.custom-radio-button__checkmark {
+    background-color: var(--white);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.custom-radio-button__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+.custom-radio-button input:checked~.custom-radio-button__checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+
+.custom-radio-button .custom-radio-button__checkmark:after {
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: var(--moderate-cyan);
+    border-color: var(--moderate-cyan);
+}
+
+/*
+  ========================================
+  Inputs
+  ========================================
+*/
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    caret-color: var(--moderate-cyan);
+}
+
+input[type=number] {
+    font-weight: 700;
+    width: 100px;
+    height: 48px;
+    border: 1px solid var(--light-gray);
+    border-radius: 50px;
+    outline: none;
+    text-align: center;
+    background-image: url('../images/dollar-sign.svg');
+    background-position: 20% 50%;
+    background-repeat: no-repeat;
+}
+
+input[type=text] {
+    font-weight: 700;
+    width: 180px;
+    height: 48px;
+    border: 1px solid var(--light-gray);
+    border-radius: 50px;
+    outline: none;
+    text-align: center;
+}
+
+input[type=radio] {
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--light-gray);
+}
+
+input:focus {
+    border-color: var(--moderate-cyan);
+}
+
+/*
+  ========================================
+  Progress Bar
+  ========================================
+*/
+
+progress {
+    border-radius: 50px; 
+    width: 100%;
+    height: 12px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--background-color);
+    border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--moderate-cyan);
+    border-radius: 50px;
+}
+
+/*
+  ========================================
+  Hidden Enter Pledge Section
+  ========================================
+*/
+
+#enter-pledge1 {
+    display: none;
+}
+
+#enter-pledge2 {
+    display: none;
+}
+
+#enter-pledge3 {
+    display: none;
+}
+
+#enter-pledge4 {
+    display: none;
+}
+
+/*
+  ========================================
+  Modal
+  ========================================
+*/
+
+.modal-background {
+    background-color: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: auto;
+    /*permite scroll en modal*/
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.modal-background::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.modal-background {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.content-modal {
+    max-width: 700px;
+    padding: 10px 20px;
+    margin: 9% auto;
+    position: relative;
+}
+
+#main-modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.confirmation-modal-box {
+    max-width: 540px;
+    height: 450px;
+    padding: 10px 20px;
+    margin: 9% auto;
+    position: relative;
+}
+
+#confirmation-modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.close-modal {
+    float: right;
+}
+
+.close-modal:hover {
+    cursor: pointer;
+}
+
+.close-modal-icon:hover path {
+    fill: var(--black);
+    opacity: 1;
+}
+
+/*
+  ========================================
+  Responsive Design
+  ========================================
+*/
+
+@media screen and (max-width: 1024px) {
+    /*
+  ========================================
+    Header
+  ========================================
+*/
+    .header {
+        background-image: url(../images/image-hero-mobile.jpg);
+        background-size: cover;
+    }
+    /*
+  ========================================
+  Typography
+  ========================================
+*/
+    h2 {
+        font-size: 18px;
+        padding: 15px 0px;
+    }
+    h3 {
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .card__main-title {
+        font-size: 20px;
+    }
+    .card__stats-number {
+        font-size: 32px;
+    }
+    /*
+  ========================================
+  Cards responsive
+  ========================================
+*/
+    .card-container {
+        margin: auto;
+        padding: 20px;
+    }
+    .card__stats {
+        /* background-color: red; */
+        width: max-content;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+    }
+    .card__stats--lateral-line {
+        border-bottom: 1px solid var(--light-gray);
+        border-right: none;
+    }
+    .tier__top-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tier__top-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tier__pledge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+    .tier__bottom-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .bookmark {
+        width: max-content;
+    }
+    .bookmark__icon {
+        position: absolute;
+        left: auto;
+        right: 0;
+    }
+    .bookmark__icon:hover {
+        cursor: pointer;
+    }
+    .bookmark__button {
+        display: none;
+    }
+    .available-items {
+        margin: 0px 0px 20px 0px;
+    }
+    .available-items--desktop {
+        display: none;
+    }
+    .available-items--mobile {
+        display: flex;
+        flex-direction: row;
+        /* margin: 0px 10px 10px 0px; */
+    }
+    /*
+  ========================================
+  Menu responsive
+  ========================================
+*/
+    .navbar {
+        margin: 0px 4%;
+    }
+    .navbar__menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 90%;
+        border-radius: 10px;
+        transition: 0.3s;
+        margin: 0px 20px;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    .navbar__menu.active {
+        left: 0;
+    }
+    .navbar__link {
+        color: var(--black);
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .navbar__item {
+        margin: 15px;
+        width: 90%;
+        height: 20px;
+    }
+    .navbar__item-box {
+        width: 100%;
+    }
+    .navbar__item-box--border-bottom {
+        width: 100%;
+        border-bottom: 1px solid var(--light-gray);
+    }
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+}
